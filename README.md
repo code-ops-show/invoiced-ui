@@ -7,3 +7,10 @@ The idea is it can grow from here.
 ## Development Only
 
 Currently This config is development only, if you want to configure it for production feel free to add your own.
+
+## Usage
+
+``` shell
+npm install
+npm start
+```
