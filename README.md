@@ -10,6 +10,8 @@ Currently This config is development only, if you want to configure it for produ
 
 ## Usage
 
+Simply fork and clone this repository and run.
+
 ``` shell
 npm install
 npm start
