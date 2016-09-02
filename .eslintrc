@@ -17,5 +17,8 @@
   "rules": {
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
+    "no-multi-spaces": [1, {
+      "exceptions": { "VariableDeclaration": true, "ImportDeclaration": true }
+    }]
   }
 }
