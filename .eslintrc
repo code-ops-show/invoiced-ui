@@ -17,6 +17,9 @@
   "rules": {
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": ['*.config.js']
+    }],
     "no-multi-spaces": [1, {
       "exceptions": { "VariableDeclaration": true, "ImportDeclaration": true }
     }]
