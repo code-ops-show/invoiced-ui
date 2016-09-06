@@ -38,6 +38,7 @@
     "webpack-dev-server": "^1.15.0"
   },
   "dependencies": {
+    "purecss": "^0.6.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1"
   }
