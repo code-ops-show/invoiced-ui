@@ -3,6 +3,6 @@ import { render } from 'react-dom';
 
 import './style.css';
 
-import HelloWorld from './components';
+import { Layout } from './components';
 
-render(<HelloWorld />, document.getElementById('app'));
+render(<Layout />, document.getElementById('app'));
