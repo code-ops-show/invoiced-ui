@@ -3,6 +3,8 @@ import React from 'react';
 import Contact from './Contact';
 import data from './data';
 
+import './Layout.css';
+
 class Layout extends React.Component {
   componentWillMount() {
     this.setState({
@@ -21,12 +23,28 @@ class Layout extends React.Component {
                                    name: `New Contact ${newId}`,
                                    email: `${newId}@example.com` }),
     });
-  }
+  };
+
+  newContact = () =>
+    <div className='pure-g'>
+      <div className='pure-u-12-24'>
+        <form className='pure-form'>
+          <fieldset>
+            <legend>New Contact</legend>
+
+            <input type='email' placeholder='example@example.com' />
+            <input type='text'  placeholder='Name' />
+
+            <button type="submit" className="pure-button pure-button-primary">Add</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>;
 
   render() {
     return (
       <div id='Layout'>
-        <a href='#' className='pure-button' onClick={this.addContact}>Add Contact</a>
+        {this.newContact()}
         <div className='pure-g'>
           {this.state.contacts.map(info =>
             <Contact key={info.id} {...info} />
