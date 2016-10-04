@@ -36,7 +36,7 @@ class Layout extends React.Component {
             <legend>New Contact</legend>
 
             <input ref='email' type='email' placeholder='example@example.com' />
-            <input ref='name' type='text'  placeholder='Name' />
+            <input ref='name' type='text' placeholder='Name' />
 
             <button type="submit" className="pure-button pure-button-primary">Add</button>
           </fieldset>
