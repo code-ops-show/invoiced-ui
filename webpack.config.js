@@ -31,6 +31,9 @@ module.exports = {
       },
     ],
   },
+  sassLoader: {
+    includePaths: ['./vendor'],
+  },
   plugins: [
   ],
 };
