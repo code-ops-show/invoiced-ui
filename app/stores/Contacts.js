@@ -19,6 +19,13 @@ class Contacts {
       )[0]
     );
   }
+
+  @action remove(contactId) {
+    const existing = this.all;
+    this.all = existing.filter(
+      c => c.id !== contactId
+    );
+  }
 }
 
 export default new Contacts();
