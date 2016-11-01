@@ -1,12 +1,10 @@
 import React from 'react';
-import { observer } from 'mobx-react';
 
 import Contact from './Contact';
 import data from './data';
 
 import styles from './Collection.sass';
 
-@observer(['contacts'])
 class Layout extends React.Component {
   componentWillMount() {
     this.setState({
@@ -51,7 +49,7 @@ class Layout extends React.Component {
       <div id='Collection' className={styles.main}>
         {this.newContact()}
         <div className='pure-g'>
-          {this.props.contacts.all.slice().map(info =>
+          {this.state.contacts.map(info =>
             <Contact key={info.id} {...info} />
           )}
         </div>

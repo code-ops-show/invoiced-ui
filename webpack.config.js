@@ -26,13 +26,10 @@ module.exports = {
         loader: 'babel',
         query: {
           presets: ['es2015', 'stage-0', 'react'],
-          plugins: ['transform-runtime', 'transform-decorators-legacy'],
+          plugins: ['transform-runtime'],
         },
       },
     ],
-  },
-  sassLoader: {
-    includePaths: ['./vendor'],
   },
   plugins: [
   ],
