@@ -7,6 +7,10 @@ import styles from './Collection.sass';
 
 @observer(['contacts'])
 class Layout extends React.Component {
+  componentWillMount() {
+    this.props.contacts.fetchAll();
+  }
+
   addContact = (e) => {
     e.preventDefault();
 

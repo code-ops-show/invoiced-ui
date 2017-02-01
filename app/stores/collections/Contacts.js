@@ -1,11 +1,18 @@
 import { observable, action } from 'mobx';
 
 class Contacts {
-  @observable all = [
-    { id: 1, name: 'Zack Siri', email: 'zack@codemy.net' },
-    { id: 2, name: 'Savika', email: 'savika@example.com' },
-    { id: 3, name: 'Chad', email: 'chad@example.com' },
-  ];
+  @observable all = [];
+  @observable isLoading = false;
+
+  @action async fetchAll() {
+    this.isLoading = false;
+    const response = await fetch('http://localhost:3000/v1/contacts');
+    const status = await response.status;
+
+    if (status === 200) {
+      this.all = response.json();
+    }
+  }
 
   @action add(data) {
     const existing = this.all;
