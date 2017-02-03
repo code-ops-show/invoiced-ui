@@ -14,16 +14,14 @@ class Layout extends React.Component {
   addContact = (e) => {
     e.preventDefault();
 
-    const contacts = this.props.contacts.all.slice();
-    const newId = contacts[contacts.length - 1].id + 1;
-
     this.props.contacts.add({
-      id: newId,
-      name: this.refs.name.value,
+      first_name: this.refs.first_name.value,
+      last_name: this.refs.last_name.value,
       email: this.refs.email.value,
     });
 
-    this.refs.name.value = null;
+    this.refs.first_name.value = null;
+    this.refs.last_name.value = null;
     this.refs.email.value = null;
   };
 
@@ -35,7 +33,8 @@ class Layout extends React.Component {
             <legend>New Contact</legend>
 
             <input ref='email' type='email' placeholder='example@example.com' />
-            <input ref='name' type='text' placeholder='Name' />
+            <input ref='first_name' type='text' placeholder='First Name' />
+            <input ref='last_name' type='text' placeholder='Last Name' />
 
             <button type="submit" className="pure-button pure-button-primary">Add</button>
           </fieldset>
