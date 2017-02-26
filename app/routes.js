@@ -9,9 +9,12 @@ import c from './components';
 const routes =
   <Route component={c.Layout}>
     <Redirect from='/' to='/contacts' />
+    <Route path='users'>
+      <Route path='sign_in' component={c.Sessions.New} />
+    </Route>
     <Route path='contacts'>
-      <IndexRoute component={c.Collection} />
-      <Route path=':contactId' component={c.Show} />
+      <IndexRoute component={c.Contacts.Collection} />
+      <Route path=':contactId' component={c.Contacts.Show} />
     </Route>
   </Route>;
 

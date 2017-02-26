@@ -13,7 +13,8 @@ class Contacts {
     const status = await response.status;
 
     if (status === 200) {
-      this.all = await response.json();
+      const json = await response.json();
+      this.all = await json.data;
     }
   }
 
