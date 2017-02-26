@@ -7,6 +7,12 @@ module.exports = {
     filename: '[name].js',
     chunkFileName: '[id].js',
   },
+  devServer: {
+    hot: true,
+    inline: true,
+    colors: true,
+    historyApiFallback: true,
+  },
   resolve: {
     modulesDirectories: ['node_modules', 'lib', 'app', 'vendor'],
   },
