@@ -5,43 +5,53 @@ module.exports = {
   output: {
     path: __dirname,
     filename: '[name].js',
-    chunkFileName: '[id].js',
+    chunkFilename: '[id].js',
   },
   devServer: {
     hot: true,
     inline: true,
-    colors: true,
     historyApiFallback: true,
   },
   resolve: {
-    modulesDirectories: ['node_modules', 'lib', 'app', 'vendor'],
+    modules: ['node_modules', 'lib', 'app', 'vendor'],
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.css$/,
-        loader: 'style!css',
+        use: [
+          'style-loader',
+          'css-loader',
+        ],
       },
       {
         test: /\.(scss|sass)$/,
-        loaders: [
-          'style',
-          'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!sass',
-        ],
+        use: [{
+          loader: 'style-loader',
+        }, {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+            importLoaders: 1,
+            localIdentName: '[path]_[name]_[local]_[hash:base64:5]',
+          },
+        }, {
+          loader: 'sass-loader',
+          options: {
+            includePaths: ['./vendor'],
+          },
+        }],
       },
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel',
+        loader: 'babel-loader',
         query: {
           presets: ['es2015', 'stage-0', 'react'],
           plugins: ['transform-runtime', 'transform-decorators-legacy'],
         },
       },
     ],
-  },
-  sassLoader: {
-    includePaths: ['./vendor'],
   },
   plugins: [
   ],
