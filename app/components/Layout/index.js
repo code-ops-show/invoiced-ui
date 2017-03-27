@@ -10,6 +10,10 @@ import styles from './index.sass';
 
 @inject('user') @observer
 class Application extends React.Component {
+  componentWillMount() {
+    this.props.user.signIn();
+  }
+
   guestOrMember() {
     const { user } = this.props;
 
