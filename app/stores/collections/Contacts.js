@@ -8,13 +8,14 @@ class Contacts {
   @observable isLoading = false;
 
   @action async fetchAll() {
-    this.isLoading = false;
+    this.isLoading = true;
     const response = await Api.get(this.path);
     const status = await response.status;
 
     if (status === 200) {
       const json = await response.json();
       this.all = await json.data;
+      this.isLoading = false;
     }
   }
 

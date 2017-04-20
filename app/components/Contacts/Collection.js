@@ -1,6 +1,8 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 
+import Spinner from 'components/Spinner';
+
 import Contact from './Contact';
 
 import styles from './Collection.sass';
@@ -43,11 +45,15 @@ class Layout extends React.Component {
     </div>;
 
   render() {
+    const { all, isLoading } = this.props.contacts;
+
+    if (isLoading) { return <Spinner />; }
+
     return (
       <div id='Collection' className={styles.main}>
         {this.newContact()}
         <div className='pure-g'>
-          {this.props.contacts.all.slice().map(info =>
+          {all.slice().map(info =>
             <Contact key={info.id} {...info} />
           )}
         </div>
