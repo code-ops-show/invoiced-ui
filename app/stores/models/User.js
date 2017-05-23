@@ -31,6 +31,8 @@ class User {
       this.signInFromStorage(store.email);
     } else if (email && password) {
       this.createSession(email, password);
+    } else { 
+      this.signOut();
     }
   }
 

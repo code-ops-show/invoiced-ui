@@ -54,7 +54,7 @@ module.exports = {
         }, {
           loader: 'sass-loader',
           options: {
-            includePaths: ['./vendor'],
+            includePaths: ['./vendor', './app'],
           },
         }],
       },
