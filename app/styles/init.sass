@@ -1,6 +1,14 @@
+@import 'styles/colors'
+
 :global
   body
     font-family: 'Roboto', sans-serif
   .pure-form
     input
       border-radius: 0.2em !important
+  .pure-button
+    box-shadow: 0.1em 0.1em 0em $base-mid-blue
+    &:hover, &:visited, &:focus
+      box-shadow: 0.1em 0.1em 0em $base-mid-blue
+    &:active
+      box-shadow: 0em 0em 0em

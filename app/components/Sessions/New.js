@@ -1,5 +1,6 @@
 import React from 'react';
 import { observer, inject } from 'mobx-react';
+import { Link } from 'react-router';
 
 import styles from './New.sass';
 
@@ -33,6 +34,9 @@ class New extends React.Component {
               Sign In
             </button>
           </form>
+        </div>
+        <div className={styles.extras}>
+          <Link to='/users/sign_up'>Don't have and account?</Link>
         </div>
       </div>
     );

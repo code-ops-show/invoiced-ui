@@ -16,6 +16,13 @@
     input
       margin-bottom: 1em !important
 
+.extras
+  +fixed_width_and_center(25em)
+  text-align: center
+  margin-top: 3em
+  a
+    color: white
+
 .title
   +fixed_width_and_center(25em)
   text-align: center
@@ -30,6 +37,9 @@
   margin-top: 1em
   background: $base-light-blue
   color: white
+  &:hover
+    background: $base-light-blue
+
 
 .formWrapper
   +fixed_width_and_center(25em)
