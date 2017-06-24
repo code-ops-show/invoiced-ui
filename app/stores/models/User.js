@@ -5,6 +5,7 @@ import Api from 'helpers/api';
 
 class User {
   sessions = '/sessions';
+  users = '/users';
 
   @observable isLoading = false;
   @observable signedIn = false;
