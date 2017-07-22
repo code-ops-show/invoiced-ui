@@ -2507,6 +2507,14 @@ fresh@0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.5.0.tgz#f474ca5e6a9246d6fd8e0953cfa9b9c805afa78e"
 
+fronto-api@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/fronto-api/-/fronto-api-1.0.0.tgz#6c1eb79eb8c1fc082b647eeb281b69937ad6bce0"
+
+fronto-connect@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/fronto-connect/-/fronto-connect-1.0.6.tgz#6fe50b71de8b5cf8e8f341b29d27db7836aa8818"
+
 fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
@@ -3832,15 +3840,15 @@ mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkd
   dependencies:
     minimist "0.0.8"
 
-mobx-react@^3.5.8:
-  version "3.5.9"
-  resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-3.5.9.tgz#b710299539d58d7af1189b5e86bc0be4198a43c1"
+mobx-react@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-4.2.2.tgz#db9cc3cafefbd830d0584c1149af5aae67829201"
   dependencies:
     hoist-non-react-statics "^1.2.0"
 
-mobx@^2.6.1:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/mobx/-/mobx-2.7.0.tgz#cf3d82d18c0ca7f458d8f2a240817b3dc7e54a01"
+mobx@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/mobx/-/mobx-3.2.1.tgz#6aeade0120cc3f78baa57195031630a0ae8f13cf"
 
 mozjpeg@^4.0.0:
   version "4.1.1"
