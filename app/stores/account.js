@@ -1,4 +1,5 @@
-import { Connect, mix, scopes } from 'fronto-connect';
+import { Connect, mix } from 'fronto-connect';
+import scopes from './scopes';
 
 class Account extends Connect {
   namespace = 'v1';
