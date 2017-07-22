@@ -1,12 +1,22 @@
 import React from 'react';
-import Page from 'components/Page';
+import { inject, observer } from 'mobx-react';
 import { Link } from 'react-router';
 
+import Page from 'components/Page';
 import buttons from 'styles/buttons.sass';
 
+@inject('user') @observer
 class New extends React.PureComponent {
   submitForm = (e) => {
     e.preventDefault();
+
+    const { user } = this.props;
+
+    user.create(
+      this.email.value,
+      this.password.value,
+      this.password_confirm.value
+    );
   }
 
   render() {
