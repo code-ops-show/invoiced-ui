@@ -6,7 +6,15 @@ import styles from './Welcome.sass';
 
 import cashRegister from './create-account.svg';
 
+import Modal from './Modal';
+
 class Welcome extends React.PureComponent {
+  openModal = (e) => {
+    e.preventDefault();
+
+    this.modal.open();
+  }
+
   render() {
     return (
       <div className={styles.box}>
@@ -16,9 +24,10 @@ class Welcome extends React.PureComponent {
 
           Let's create our first account.
         </p>
-        <a href='#' className={`pure-button ${buttons.gold}`}>
+        <a href='#' onClick={this.openModal} className={`pure-button ${buttons.gold}`}>
           Lets Get Started!
         </a>
+        <Modal ref={(node) => { this.modal = node; }} />
       </div>
     );
   }
