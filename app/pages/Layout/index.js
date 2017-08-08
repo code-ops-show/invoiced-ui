@@ -3,15 +3,21 @@ import { observer, inject } from 'mobx-react';
 import { Link } from 'react-router';
 import classNames from 'classnames';
 
+import Modal from 'components/Modal';
+
 import Guest from './Guest';
 import Member from './Member';
 import styles from './index.sass';
 
-
-@inject('user') @observer
+@inject('user', 'settings') @observer
 class Application extends React.Component {
   componentDidMount() {
     this.props.user.signIn();
+  }
+
+  setModal = (node) => {
+    const { settings } = this.props;
+    settings.layout.modal = node;
   }
 
   guestOrMember() {
@@ -23,7 +29,6 @@ class Application extends React.Component {
 
     return (<Guest />);
   }
-
 
   render() {
     return (
@@ -37,6 +42,7 @@ class Application extends React.Component {
           </div>
         </div>
         {this.props.children}
+        <Modal ref={this.setModal} />
       </div>
     );
   }
