@@ -7,5 +7,6 @@ class Account extends Connect {
 }
 
 mix(Account, scopes.readable);
+mix(Account, scopes.writable);
 
 export default Account;

@@ -5,11 +5,9 @@ import buttons from 'styles/buttons.sass';
 
 import styles from './Welcome.sass';
 
+import Accounts from './Accounts';
+
 import cashRegister from './create-account.svg';
-
-const Example = props =>
-  <p>{props.hello} inserted Content!</p>;
-
 
 @inject('settings') @observer
 class Welcome extends React.PureComponent {
@@ -19,7 +17,7 @@ class Welcome extends React.PureComponent {
     const { settings } = this.props;
 
     settings.layout.modal.setContent(
-      <Example hello="It's Me" />
+      <Accounts.New />
     );
     settings.layout.modal.open();
   }
