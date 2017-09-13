@@ -39,7 +39,7 @@ class New extends React.PureComponent {
     return (
       <div className={styles.wrapper}>
         <h1>Let's create an Account</h1>
-        <form className={classNames(styles.form, 'pure-form', 'pure-form-stacked')} 
+        <form className={classNames(styles.form, 'pure-form', 'pure-form-stacked')}
               onSubmit={this.submitForm}>
           <fieldset>
             <label htmlFor='name'>Company Name</label>

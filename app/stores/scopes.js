@@ -27,12 +27,12 @@ const writable = {
     this.setIsLoading(true);
     this.call({ parameters, body, type: 'post' }, callback);
   },
-  delete(parameters) { 
+  delete(parameters) {
     this.setIsLoading(true);
     this.call({ parameters, type: 'delete' }, {
       200: (response) => this.removeFromCollection(response.data),
     });
   },
-}
+};
 
 export default { readable, writable };

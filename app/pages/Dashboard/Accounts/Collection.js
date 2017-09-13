@@ -30,7 +30,7 @@ class Collection extends React.PureComponent {
     if (isLoading) return null;
 
     const action =
-      <a href='#' className={classNames('pure-button', buttons.base, buttons.action)} 
+      <a href='#' className={classNames('pure-button', buttons.base, buttons.action)}
          onClick={this.openModal}>
         New Account
       </a>;
