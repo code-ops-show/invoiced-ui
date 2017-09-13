@@ -1,22 +1,38 @@
 import React from 'react';
-import { observer } from 'mobx-react';
+import { extendObservable } from 'mobx';
+import { inject, observer } from 'mobx-react';
+import { withRouter } from 'react-router';
 
 import Spinner from 'components/Spinner';
+
+import stores from 'stores';
 
 import Contact from './Contact';
 
 import styles from './Collection.sass';
 
-@observer(['contacts'])
-class Layout extends React.Component {
-  componentWillMount() {
-    this.props.contacts.fetchAll();
+@withRouter @inject('endpoint') @observer
+class Collection extends React.Component {
+  constructor(props) {
+    super(props);
+
+    const { endpoint, params } = props;
+    const { accountId } = params;
+
+
+    extendObservable(this, {
+      contacts: new stores.Contact(endpoint, `v1/${accountId}`),
+    });
+  }
+
+  componentDidMount() {
+    this.contacts.findAll();
   }
 
   addContact = (e) => {
     e.preventDefault();
 
-    this.props.contacts.add({
+    this.contacts.add({
       first_name: this.refs.first_name.value,
       last_name: this.refs.last_name.value,
       email: this.refs.email.value,
@@ -45,15 +61,15 @@ class Layout extends React.Component {
     </div>;
 
   render() {
-    const { all, isLoading } = this.props.contacts;
+    const { collection, isLoading } = this.contacts;
 
     if (isLoading) { return <Spinner />; }
 
     return (
-      <div id='Collection' className={styles.main}>
+      <div id='collection' className={styles.main}>
         {this.newContact()}
         <div className='pure-g'>
-          {all.slice().map(info =>
+          {collection.slice().map(info =>
             <Contact key={info.id} {...info} />
           )}
         </div>
@@ -62,4 +78,4 @@ class Layout extends React.Component {
   }
 }
 
-export default Layout;
+export default Collection;
