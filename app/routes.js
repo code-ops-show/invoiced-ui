@@ -16,6 +16,10 @@ const routes =
     <Route component={c.Layout.Application}>
       <Route path='dashboard' component={c.Dashboard} />
       <Route path='accounts/:accountId'>
+        <Route path='organizations'>
+          <IndexRoute component={c.Organizations.Collection} />
+          <Route path='new' component={c.Organizations.New} />
+        </Route>
         <Route path='contacts'>
           <IndexRoute component={c.Contacts.Collection} />
           <Route path=':contactId' component={c.Contacts.Show} />

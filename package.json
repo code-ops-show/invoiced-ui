@@ -50,6 +50,6 @@
     "react": "^15.3.1",
     "react-css-modules": "^3.7.10",
     "react-dom": "^15.3.1",
-    "react-router": "^2.8.1"
+    "react-router": "<4.0.0"
   }
 }
