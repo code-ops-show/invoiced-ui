@@ -1,6 +1,5 @@
 import React from 'react';
 import classNames from 'classnames';
-import { extendObservable } from 'mobx';
 import { inject, observer } from 'mobx-react';
 
 import { Link } from 'react-router';
@@ -11,6 +10,8 @@ import stores from 'stores';
 import Spinner from 'components/Spinner';
 import Page from 'components/Page';
 
+import Contact from './Contact';
+
 @inject('endpoint') @observer
 class Collection extends React.PureComponent {
   constructor(props) {
@@ -19,9 +20,7 @@ class Collection extends React.PureComponent {
     const { endpoint, params } = props;
     const { accountId } = params;
 
-    extendObservable(this, {
-      organizations: new stores.Organization(endpoint, `v1/${accountId}`),
-    });
+    this.organizations = new stores.Organization(endpoint, `v1/${accountId}`);
   }
 
   componentDidMount() {
@@ -32,7 +31,7 @@ class Collection extends React.PureComponent {
     const { collection, isLoading } = this.organizations;
 
     const action =
-      <Link href={`/accounts/${this.props.params.accountId}/organizations/new`}
+      <Link to={`/accounts/${this.props.params.accountId}/organizations/new`}
             className={classNames('pure-button', buttons.base, buttons.action)}
          onClick={this.openModal}>
         New Organization
@@ -41,7 +40,7 @@ class Collection extends React.PureComponent {
     return (
       <Page.Actionable title='Organizations' action={action}>
         {collection.map(org =>
-          <div key={org.id}>{org.name}</div>
+          <Contact key={org.id} {...org} params={this.props.params} />
         )}
       </Page.Actionable>
     );

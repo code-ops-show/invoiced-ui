@@ -19,6 +19,7 @@ const routes =
         <Route path='organizations'>
           <IndexRoute component={c.Organizations.Collection} />
           <Route path='new' component={c.Organizations.New} />
+          <Route path=':organizationId' component={c.Organizations.Show} />
         </Route>
         <Route path='contacts'>
           <IndexRoute component={c.Contacts.Collection} />
